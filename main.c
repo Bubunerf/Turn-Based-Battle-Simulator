@@ -58,7 +58,7 @@ while (player_health > 0 && monster_health >0) {
         while ((ch = getchar()) != '\n' && ch != EOF){
         }
         if (ch = EOF){
-            break;
+            break;  
         }
         
         continue;
