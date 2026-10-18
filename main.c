@@ -22,7 +22,7 @@ while (player_health > 0 && monster_health >0) {
     printf("Choose an action:\n1. Attack\n2. Heal (Number of potions left: %d)\n\n" , number_of_potions);
 
     
-    if (scanf("%d" , &user_choice) == 1){
+    if (scanf("%d" , &user_choice) == 1 || scanf("%d" , &user_choice) == 2){
     
         if (user_choice == 1) {
             int damage_player = rand() % 11 + 10;
@@ -37,16 +37,20 @@ while (player_health > 0 && monster_health >0) {
                     player_health = 100;
                 }
                 number_of_potions -= 1;
+\
+                printf("\nYou healed for %d\n", max_heal);
             }
             else if (number_of_potions == 0) {
-                printf("You do not have any potions left, you cannot heal\n");
+                printf("You do not have any potions left, you cannot heal\n\n");
+                continue;
             }
 
-            printf("\nYou healed for %d\n", max_heal);
+            
     
         }
     }
     else {
+        printf("Invalid entry your turn is skipped\n");
         continue;
     }
 
